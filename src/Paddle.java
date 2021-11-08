@@ -1,22 +1,21 @@
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
 
 public class Paddle {
 
-    int height = 150;
-    int width = 20;
-    int x;
+    public static final int HEIGHT = 100;
+    public static final int WIDTH = 15;
+
+    private int x;
+    private int y;
 
     Paddle(int x) {
         this.x = x;
+        y = (Panel.WINDOW_HEIGHT - HEIGHT) / 2;
     }
 
-    public void draw(Graphics g) {
+    public void draw(Graphics2D g) {
         g.setColor(Color.white);
-        g.fillRect(x, 340, width, height);
+        g.fillRect(x, y, WIDTH, HEIGHT);
     }
-
 
 }

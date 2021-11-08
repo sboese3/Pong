@@ -5,14 +5,15 @@ import java.util.*;
 
 public class Ball {
 
-    int radius = 20;
+    public static final int RADIUS = 10;
 
     Ball() {
 
     }
 
-    public void draw(Graphics g) {
+    public void draw(Graphics2D g) {
         g.setColor(Color.white);
-        g.fillOval(750, 375, radius, radius);
+        g.fillOval((Panel.WINDOW_WIDTH / 2) - RADIUS, (Panel.WINDOW_HEIGHT / 2) - RADIUS, RADIUS * 2, RADIUS * 2);
     }
+
 }
