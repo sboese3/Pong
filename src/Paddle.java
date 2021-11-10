@@ -10,7 +10,7 @@ public class Paddle {
 
     Paddle(int x) {
         this.x = x;
-        y = (Panel.WINDOW_HEIGHT - HEIGHT) / 2;
+        y = (Window.WINDOW_HEIGHT - HEIGHT) / 2;
     }
 
     public void draw(Graphics2D g) {

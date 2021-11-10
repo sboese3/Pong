@@ -1,7 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
 
 public class Ball {
 
@@ -13,7 +10,7 @@ public class Ball {
 
     public void draw(Graphics2D g) {
         g.setColor(Color.white);
-        g.fillOval((Panel.WINDOW_WIDTH / 2) - RADIUS, (Panel.WINDOW_HEIGHT / 2) - RADIUS, RADIUS * 2, RADIUS * 2);
+        g.fillOval((Window.WINDOW_WIDTH / 2) - RADIUS, (Window.WINDOW_HEIGHT / 2) - RADIUS, RADIUS * 2, RADIUS * 2);
     }
 
 }

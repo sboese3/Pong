@@ -6,11 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class Panel extends JPanel implements ActionListener {
-
-    // 4:3 aspect ratio that should fit on most screens, can change if needed
-    public static final int WINDOW_WIDTH = 1024;
-    public static final int WINDOW_HEIGHT = 768;
+public class Game extends JPanel implements ActionListener {
 
     // Game updates 60 times per second, can change if needed
     Timer timer = new Timer(1000 / 60, this);
@@ -19,14 +15,12 @@ public class Panel extends JPanel implements ActionListener {
     private Paddle leftPaddle;
     private Paddle rightPaddle;
 
-    public Panel() {
-        setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
-
+    public Game() {
         timer.start();
 
         ball = new Ball();
         leftPaddle = new Paddle(0);
-        rightPaddle = new Paddle(WINDOW_WIDTH - Paddle.WIDTH);
+        rightPaddle = new Paddle(Window.WINDOW_WIDTH - Paddle.WIDTH);
     }
 
     @Override
@@ -35,7 +29,7 @@ public class Panel extends JPanel implements ActionListener {
 
         Graphics2D g2d = (Graphics2D)g;
         try {
-            Image background = ImageIO.read(new File("images/background.png"));
+            Image background = ImageIO.read(new File("images/game_background.png"));
             g2d.drawImage(background, 0, 0, this);
         } catch (IOException e) {
             System.out.println("Could not load background!");
