@@ -14,23 +14,21 @@ public class Menu extends JPanel {
     public Menu(Window currentWindow) {
         this.setLayout(null);
 
+        // 1 Player Button Setup
         b1 = new JButton(new ImageIcon("images/button1.png"));
         b1.setMargin(new Insets(0, 0, 0, 0));
         b1.setBorder(null);
         b1.setBackground(Color.BLACK);
         b1.setBounds(352, 267, 320, 128);
-        b1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                currentWindow.setPanel(Window.Panels.GAME);
-                currentWindow.invalidate();
-                currentWindow.validate();
-                remove(b1);
-                remove(b2);
-            }
+        b1.addActionListener(e -> {
+            currentWindow.setPanel(Window.Panels.GAME);
+            currentWindow.invalidate();
+            currentWindow.validate();
+            this.setVisible(false);
         });
         this.add(b1);
 
+        // 2 Player Button Setup
         b2 = new JButton(new ImageIcon("images/button2.png"));
         b2.setMargin(new Insets(0, 0, 0, 0));
         b2.setBorder(null);
@@ -39,6 +37,7 @@ public class Menu extends JPanel {
         this.add(b2);
     }
 
+    // Draws the background
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

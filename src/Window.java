@@ -3,6 +3,7 @@ import javax.swing.*;
 
 public class Window extends JFrame {
 
+    // Doesn't add any functionality, just provides a nice way to reference each panel
     public enum Panels {
         MENU,
         GAME,
@@ -12,6 +13,7 @@ public class Window extends JFrame {
     public static final int WINDOW_WIDTH = 1024;
     public static final int WINDOW_HEIGHT = 768;
 
+    // Sets up the Window for the application
     public Window() {
         setPanel(Panels.MENU);
         this.setTitle("Pong");
@@ -23,6 +25,7 @@ public class Window extends JFrame {
         this.pack();
     }
 
+    // Used for switching between different panels
     public void setPanel(Panels p) {
         JPanel panel = new JPanel();
         if(p == Panels.MENU) {

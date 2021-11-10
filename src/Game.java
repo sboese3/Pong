@@ -27,6 +27,7 @@ public class Game extends JPanel implements ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        // Draws background
         Graphics2D g2d = (Graphics2D)g;
         try {
             Image background = ImageIO.read(new File("images/game_background.png"));
@@ -34,6 +35,8 @@ public class Game extends JPanel implements ActionListener {
         } catch (IOException e) {
             System.out.println("Could not load background!");
         }
+
+        // Draw game objects
         draw(g2d);
     }
 
@@ -46,6 +49,8 @@ public class Game extends JPanel implements ActionListener {
     // This method is called every time the game updates
     @Override
     public void actionPerformed(ActionEvent e) {
-        repaint();
+
+
+        repaint(); // Leave me at the bottom!
     }
 }
